@@ -61,9 +61,16 @@ jobs:
           git config --global user.email "${{ vars.IMAGE_BUILDER_BOT_EMAIL }}"
           git config --global user.name "${{ vars.IMAGE_BUILDER_BOT_NAME }}"
 
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ vars.app_id }}
+          private-key: ${{ vars.PRIVATE_KEY_SECRET}}
+          owner: ${{ github.repository_owner }}
+          
       - name: Commit and Create/Update PR
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
           BRANCH="${{ steps.vars.outputs.branch }}"
           BASE_NAME="${{ steps.vars.outputs.base_name }}"
