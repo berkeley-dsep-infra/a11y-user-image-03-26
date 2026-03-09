@@ -1,6 +1,10 @@
-FROM us-central1-docker.pkg.dev/ucb-datahub-2018/testing/base-python-image:v0.0.3
+FROM us-central1-docker.pkg.dev/ucb-datahub-2018/base-images-repo/base-python-image:bb2e6c6
 
 USER root
+
+ENV NB_PYTHON_PREFIX=${CONDA_DIR}/envs/notebook
+ENV KERNEL_PYTHON_PREFIX=${NB_PYTHON_PREFIX}
+ENV CONDA_DEFAULT_ENV=${KERNEL_PYTHON_PREFIX}
 
 RUN apt-get update && apt-get install -y tini && rm -rf /var/lib/apt/lists/*
 
@@ -27,13 +31,14 @@ RUN mamba env update -n notebook -f /tmp/environment.yml && \
     mamba clean -afy && rm -rf /tmp/environment.yml
 
 
-
 # ------------------------------------------------------------
 # Cleanup
 # ------------------------------------------------------------
 USER root
 RUN rm -rf /tmp/*
 
+ENV REPO_DIR=/srv/repo
+COPY --chown=${NB_USER}:${NB_USER} image-tests ${REPO_DIR}/image-tests
 
 
 USER ${NB_USER}
