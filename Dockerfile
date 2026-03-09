@@ -31,7 +31,6 @@ RUN mamba env update -n notebook -f /tmp/environment.yml && \
     mamba clean -afy && rm -rf /tmp/environment.yml
 
 
-
 # ------------------------------------------------------------
 # Cleanup
 # ------------------------------------------------------------
