@@ -1,4 +1,4 @@
-FROM us-central1-docker.pkg.dev/ucb-datahub-2018/base-images-repo/base-python-image:f553b68
+FROM us-central1-docker.pkg.dev/ucb-datahub-2018/base-images-repo/base-python-image:350cff6
 
 USER root
 
