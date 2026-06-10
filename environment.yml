@@ -7,7 +7,6 @@ dependencies:
   # otherstuff
   - coverage==7.13.3
   - jupyter-book==0.15.1
-  - nbclassic==1.0.0
   - ollama==0.6.5
   - pyopenssl==23.1.0
   - requests==2.32.5
@@ -16,11 +15,6 @@ dependencies:
   - jupyterthemes==0.20.0
   - jupyterlab-accessible-themes==0.2.0
   - jupyterlab_pygments==0.3.0
-
-  # Install Code Server to test codeserver specific a11y extensions
-  - jupyter-vscode-proxy==0.6
-  - code-server==4.23.1
-
   - mystmd==1.6.3
 
   # pip installed packages, conda is preferred
@@ -33,7 +27,5 @@ dependencies:
       # https://github.com/berkeley-dsep-infra/datahub/issues/3693
 
       - nbconvert-a11y==2024.03.25
-      - nb2pdf==0.6.2
-      - nbpdfexport==0.2.1
       - jupyterlab-a11y-checker==0.2.6
       - jupyter-myst-build-proxy==0.4.0
