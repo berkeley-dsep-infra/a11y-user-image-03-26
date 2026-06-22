@@ -27,5 +27,5 @@ dependencies:
       # https://github.com/berkeley-dsep-infra/datahub/issues/3693
 
       - nbconvert-a11y==2024.03.25
-      - jupyterlab-a11y-checker==0.2.6
+      - jupyterlab-a11y-checker==0.2.8
       - jupyter-myst-build-proxy==0.4.0
