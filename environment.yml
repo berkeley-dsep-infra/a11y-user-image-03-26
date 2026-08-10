@@ -16,6 +16,8 @@ dependencies:
   - jupyterlab-accessible-themes==0.2.0
   - jupyterlab_pygments==0.3.0
   - mystmd==1.6.3
+  - notebook==7.6.1
+  - jupyterlab==4.6.2
 
   # pip installed packages, conda is preferred
   - pip:
@@ -27,5 +29,5 @@ dependencies:
       # https://github.com/berkeley-dsep-infra/datahub/issues/3693
 
       - nbconvert-a11y==2024.03.25
-      - jupyterlab-a11y-checker==0.2.8
+      - jupyterlab-a11y-checker==0.2.9
       - jupyter-myst-build-proxy==0.4.0
